@@ -1,0 +1,19 @@
+# SHA-256 dos zips do TSE usados nos resultados publicados do modelo histórico (caminhos relativos a DADOS).
+# Para conferir: na pasta DADOS, sha256sum -c ../modelo_historico/sha256_entradas.txt (ajuste o caminho), ou Get-FileHash no PowerShell.
+# hist/*.zip: baixados em 26/10/2026. votacao_secao_2026_BR.zip e detalhe_votacao_munzona_2026.zip: versões de 09/10/2026, só com o
+# 1º turno (montar.py lê só o 1º turno, então versões mais novas também servem, a menos que o TSE corrija algum número).
+# tse/res2026_2t/: 5.571 JSON (17.298.483 bytes), gerados pelo TSE em 25/10/2026 às 23:27 (campos dg/hg de cada arquivo).
+2b4d6a6f5af47e031769e6f0fa15b24759cfd3d9e8622730d8c59e311cdf276a  tse/hist/detalhe_votacao_munzona_2002.zip
+9cc8d3a710f33f7dc2b301e01cab58a67e78b6ab3bf0bd48031e7cdb46f6870f  tse/hist/detalhe_votacao_munzona_2006.zip
+5f0ea64db232ddf7b88c0cb568534477cf21d8d1c8c8d40790b33cffce03a034  tse/hist/detalhe_votacao_munzona_2010.zip
+f9195f8988edabd5db03fdef31ad33b21ad0f02c75c8a8fa30c468ed5642460a  tse/hist/detalhe_votacao_munzona_2014.zip
+df68c258a2261dff37b379f65ea5f2e8de7b3d824bb2340d8f4830274a3fabb5  tse/hist/detalhe_votacao_munzona_2018.zip
+dbf41c5e95c2efedc72848bd0ec70a47f419b539c82e893388314749617ea2f4  tse/hist/detalhe_votacao_munzona_2022.zip
+1bc418f727736ba45e0ca79d550a58b08cc91883444ad6f71c3daf5b2e09fb6f  tse/hist/votacao_secao_2002_BR.zip
+c675f86d5c9724f7ff869155b777fedf8acec40c4386c50d3f5d78d2522622f5  tse/hist/votacao_secao_2006_BR.zip
+d884147629221fa4bbedb657f83cf7a56a31d1775a51be5ce73e2b6d32617634  tse/hist/votacao_secao_2010_BR.zip
+69dc044a47ffb9f1b0f1a0109ba49c812bc58997caccb71be5ee96c9ec797f71  tse/hist/votacao_secao_2014_BR.zip
+dde2250058a7efa3b7ee336520556905456cb75d7debf99ea4badfc4d598a48c  tse/hist/votacao_secao_2018_BR.zip
+9353993de5cf03778aef44e01d4925e7ee105f5262491d344a2f0dbc956b0139  tse/hist/votacao_secao_2022_BR.zip
+2d42006d0f6c6e00bad83f5c23cd3d78cd3e3182dbc1ad6718222b6b132c23e1  tse/votacao_secao_2026_BR.zip
+bed66b27847a10ffb75828141025654fbf4f273afda7856fd5e8d48cabdf6a27  tse/detalhe_votacao_munzona_2026.zip

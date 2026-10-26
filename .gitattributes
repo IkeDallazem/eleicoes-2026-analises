@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.csv -text
+*.json -text
+*.dat binary
+*.ps1 text eol=crlf
