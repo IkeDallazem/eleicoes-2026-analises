@@ -63,7 +63,8 @@ da raiz do repositório:
 
 ```bash
 # 1. Coleta dos logs (horas; Ctrl+C interrompe e uma nova execução continua de onde parou).
-#    Rode até não restar seção "fila" nem "erro" no status impresso a cada 30 s.
+#    Rode até não restar seção "fila" nem "erro" no status impresso a cada 30 s. Com --once, encerra quando a fila
+#    esvazia (rode de novo até zerar); sem ele, continua varrendo a cada 120 s.
 python logs_urna/coletar_logs.py
 #    Opcional, em outro terminal: ajusta o teto de requisições lendo o status do coletor.
 python logs_urna/controle_ritmo.py

@@ -110,7 +110,8 @@ Para o PNG, o Playwright usa o Microsoft Edge instalado, se houver; sem Edge:
 ### Números da comparação publicada
 
 76 sinalizadas × 449 controles, todos com BU e 1º turno; 70 sinalizadas têm controle (da mesma zona ou, quando faltou, de outra zona do
-mesmo município), em 60 zonas; 29 controles vêm de outra zona do mesmo município.
+mesmo município), em 60 zonas. 36 pares usam controle de outra zona do mesmo município; 7 dessas seções também são controle
+na própria zona de outra sinalizada, por isso o JSON conta 29 controles de outra zona.
 
 | Medida | Sinalizadas | Controles | Diferença pareada | Intervalo de 95% |
 |---|---|---|---|---|

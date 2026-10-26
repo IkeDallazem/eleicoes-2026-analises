@@ -1,5 +1,5 @@
 """Compara os votos contados nos logs do 2º turno com o comparecimento oficial do TSE (arquivo de resultado por município)
-e grava cobertura.json; lista seções suspeitas (log com bem menos votos que o comparecimento do 1º turno, em município com
+e grava cobertura.json; lista seções com log possivelmente incompleto (log com bem menos votos que o comparecimento do 1º turno, em município com
 falta) que ainda não foram relidas -> refetch_list2.json (só diagnóstico).  Uso: reconcile.py bio_2t_secoes_v2.csv
 Comparecimento oficial: DADOS/tse/ab/<uf>-e006258-ab.json (baixados por abstencao/baixar.py), campo e.c dos municípios.
 Os demais arquivos (o CSV do argumento, bio_1t_secoes.csv, refetch_list.json) e as saídas ficam em DADOS/derivados/biometria."""

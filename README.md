@@ -1,7 +1,7 @@
 # Eleições 2026: análises com dados públicos do TSE
 
 Scripts que reproduzem seis análises da eleição presidencial de 2026, feitas só com dados públicos do TSE: arquivos de
-resultado, dados abertos, boletins de urna e logs das urnas. Cada pasta tem um README com o método, as fontes, os
+resultado, dados abertos, boletins de urna e logs das urnas. Cada pasta de análise tem um README com o método, as fontes, os
 comandos na ordem certa, as saídas e as ressalvas.
 
 | Pasta | O que mede |
@@ -22,7 +22,8 @@ comandos na ordem certa, as saídas e as ressalvas.
 - Playwright com Microsoft Edge ou o Chromium do Playwright, só para as imagens de `logs_urna/` e `comparacao_bu/`
   (`python -m playwright install chromium`).
 - As imagens saem idênticas às publicadas com matplotlib 3.11.2 e a fonte Segoe UI (Windows). Em outros sistemas a
-  fonte DejaVu Sans entra no lugar: os números são os mesmos, mas o texto muda um pouco de largura.
+  fonte DejaVu Sans entra no lugar: os números são os mesmos, mas o texto muda um pouco de largura. Para usar
+  exatamente essas versões com uv: `uv run --no-project --with-requirements requirements.txt python <script>`.
 
 ## Dados
 
@@ -42,10 +43,12 @@ dados/
 
 - `abstencao/baixar.py` baixa os arquivos de resultado por UF e o nacional, além dos zips de votação por município. Eles
   são usados por quase todas as análises.
-- `logs_urna/coletar_logs.py` baixa os logs das urnas: cerca de 499 mil seções, uns 90 GB transferidos e 33 GB em
-  disco; no ritmo padrão (até 8 requisições por segundo), a coleta leva mais de 30 h. Esses logs são a base de `logs_urna/`, `biometria/` e `comparecimento_dia/`.
+- `logs_urna/coletar_logs.py` baixa os logs das urnas: cerca de 499 mil seções, uns 90 GB transferidos e cerca de 35 GB
+  em disco; no ritmo padrão (até 8 requisições por segundo), a coleta leva mais de 30 h. Esses logs são a base de `logs_urna/`, `biometria/` e `comparecimento_dia/`.
 - `comparacao_bu/` usa o `secoes_analisadas.csv` gerado por `logs_urna/`.
 - `comparecimento_dia/` usa as tabelas por seção geradas por `biometria/`.
+- `biometria/conferir_bu_2t.py` usa `comparacao_bu/baixar_bu.py` (para baixar os BUs) e `comparacao_bu/bu_parser.py`;
+  `comparacao_bu/` baixa o zip de votação por seção com `modelo_historico/baixar.py secao2026`.
 - `abstencao/` e `modelo_historico/` não dependem dos logs.
 
 ## Requisições ao TSE
@@ -69,8 +72,9 @@ pode bloquear temporariamente quem faz requisições demais.
 ## Dados de terceiros
 
 `comum/ufs.json` é uma versão simplificada de `brazil-states.geojson`, do projeto
-[codeforamerica/click_that_hood](https://github.com/codeforamerica/click_that_hood) (licença MIT). `comum/gerar_ufs.py`
-refaz o arquivo a partir da fonte.
+[codeforamerica/click_that_hood](https://github.com/codeforamerica/click_that_hood) (licença MIT; hoje o projeto fica em
+codeforgermany/click_that_hood). `python comum/gerar_ufs.py` (precisa de duckdb) refaz `comum/ufs.json` a partir da
+fonte; é o único script que grava dentro da pasta do código.
 
 ## Licença
 

@@ -1,4 +1,4 @@
-"""Quanto o 2º turno de 2026 se afastou do que a história dos 2º turnos (2002–2022) prevê, município a município.
+"""Quanto o 2º turno de 2026 se afastou do que a história dos 2º turnos (2002–2022) indica, município a município.
 
 Alvo: parte do candidato do PT nos votos válidos do 2º turno (o PT esteve em todos os 2º turnos desde 2002).
 Entradas (1º turno, sobre os aptos): PT, outro finalista, demais candidatos, brancos+nulos, abstenção; UF, região, porte.
@@ -6,8 +6,8 @@ Modelos:
 - base: parte do PT entre os dois finalistas já no 1º turno (sem transferência nenhuma);
 - A (transferência): votos do PT e do adversário no 2º turno como combinação não negativa dos grupos do 1º turno (regressão
   ecológica, coeficientes iguais para o país, estimados nos outros anos);
-- B (gradient boosting): mesma informação + UF, região e porte, prevendo a parte do PT nos válidos.
-Teste: cada eleição de 2002 a 2022 é prevista com os modelos treinados nas outras 5 (deixa uma de fora). Depois, 2026 é previsto
+- B (gradient boosting): mesma informação + UF, região e porte, estimando a parte do PT nos válidos.
+Teste: cada eleição de 2002 a 2022 é estimada com os modelos treinados nas outras 5 (deixa uma de fora). Depois, 2026 é estimado
 com as 6. Grava resultados.json e previsoes.csv. Comparecimento: mesmo esquema para a variação do comparecimento entre os turnos.
 Entrada e saídas em DADOS/derivados/modelo_historico/ (municipios.csv vem de montar.py).
 """

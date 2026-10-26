@@ -31,9 +31,14 @@ Duas medidas tiradas dos logs das urnas do 2º turno (25/10/2026), seção por s
 Os scripts não gravam nada ao lado do código. Tudo fica em `DADOS`, que por padrão é `dados/` na raiz do repositório;
 para usar outra pasta, defina a variável de ambiente `ELEICOES_DADOS` (veja `comum/caminhos.py`):
 
+```bat
+rem Windows (cmd)
+set ELEICOES_DADOS=D:\eleicoes
 ```
-set ELEICOES_DADOS=D:\eleicoes          (Windows, cmd)
-export ELEICOES_DADOS=/dados/eleicoes   (Linux/macOS)
+
+```bash
+# Linux/macOS
+export ELEICOES_DADOS=/dados/eleicoes
 ```
 
 Entradas lidas por esta análise:
@@ -123,7 +128,7 @@ Com as entradas usadas nos resultados publicados:
 
 | Item | Tamanho | Tempo aproximado |
 |---|---|---|
-| `DADOS/urna_logs/day/` | 499.176 arquivos, 32,7 GB (só as linhas do dia da votação, em gzip) | mais de 30 h de coleta no ritmo padrão (ver `logs_urna/`) |
+| `DADOS/urna_logs/day/` | 499.176 arquivos, 32,7 GB (só as linhas de 25 e 26/10, em gzip) | mais de 30 h de coleta no ritmo padrão (ver `logs_urna/`) |
 | `DADOS/urna_logs/sections.sqlite` | 255 MB | |
 | `DADOS/jez_contingencia/` | 1.971 seções, ~397 MB de `.jez` (~407 MB com os `aux.json`) | |
 | `bio_1t_secoes.csv` / `bio_2t_secoes_v2.csv` | 22,8 MB / 18,8 MB | |

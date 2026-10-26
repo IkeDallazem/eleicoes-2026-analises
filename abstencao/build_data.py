@@ -1,6 +1,6 @@
 """Monta a tabela de abstenção por município (1º e 2º turno) para 2026 e 2022.
 
-2026: arquivos de abrangência do TSE (dados/<uf>/<uf>-e<eleição>-ab.json), um por UF e turno — te = aptos, c = comparecimento, a = abstenção.
+2026: arquivos de abrangência do TSE (DADOS/tse/ab/<uf>-e<eleição>-ab.json), um por UF e turno — te = aptos, c = comparecimento, a = abstenção.
 2022: detalhe_votacao_munzona_2022_BRASIL.csv (cargo 1, Presidente), somado por município (todas as zonas e linhas de voto em trânsito).
 Saída: abst_municipios.csv (ano, uf, cd_municipio, aptos/abst de cada turno) e checagem 2026 1º turno contra o CSV oficial do TSE.
 

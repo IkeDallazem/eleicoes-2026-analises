@@ -1,4 +1,5 @@
-"""Resumos em texto das duas partes (comparecimento por seção; biometria ao longo do dia), gerados só a partir dos números:
+"""Resumos em texto das duas partes (comparecimento por seção; biometria ao longo do dia), gerados a partir dos números (com três
+frases fixas, descritas nas Ressalvas do README):
 comparecimento.json e biometria.json (comparecimento.py e biometria_dia.py), bio_1t_secoes.csv e bio_2t_secoes_v2.csv
 (DADOS/derivados/biometria/) e os arquivos de resultado do TSE por município (DADOS/tse/ab/, baixados por abstencao/baixar.py).
 Grava textos.json em DADOS/derivados/comparecimento_dia/ e mostra os textos na tela."""

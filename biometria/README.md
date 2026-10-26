@@ -158,7 +158,7 @@ python biometria/lista_contingencia.py --ufs RR AP AC
 
 Em 2026, esses três estados têm 5.703 seções com log e 12 seções com urna substituída.
 
-**Conferir os resultados.** `sha256_resultados.txt` tem o SHA-256 das tabelas e JSONs gerados a partir dos dados de
+**Conferir os resultados.** `sha256_resultados.txt` tem o SHA-256 das tabelas e JSONs principais gerados a partir dos dados de
 2026 (as imagens dependem da fonte e da versão do matplotlib e não entram):
 
 ```bash
@@ -188,13 +188,14 @@ e risco de quem roda: o servidor do TSE responde HTTP 429 e pode bloquear acesso
 | `bio_2t_secoes_v2.csv` | `bio_nested.py` | `bio_2t_secoes.csv` com essas seções recontadas (é a tabela usada daqui em diante) |
 | `nested_report.json` | `bio_nested.py` | antes/depois de cada seção recontada (votos, biom_sem_hab, número de logs e de urnas) |
 | `cobertura.json` | `reconcile.py` | `oficial`, `logs`, `falta`, `pct` e o texto usado no rodapé dos gráficos |
-| `refetch_list2.json` | `reconcile.py` | diagnóstico: seções ainda suspeitas (log com menos de 85% do comparecimento do 1º turno, em município com falta); em 2026, 1 seção, não usada nos resultados |
+| `refetch_list2.json` | `reconcile.py` | diagnóstico: seções com log possivelmente incompleto (log com menos de 85% do comparecimento do 1º turno, em município com falta); em 2026, 1 seção, não usada nos resultados |
 | `bio_uf.json` | `build_uf.py` | `{UF: [votos 1T, biom_sem_hab 1T, votos 2T, biom_sem_hab 2T]}` |
 | `1-mapas-1t-2t.png` | `bio_charts.py` | mapas do percentual por estado no 1º e no 2º turno, mesma escala |
 | `2-mapa-diferenca.png` | `bio_charts.py` | mapa da diferença 2º − 1º turno, em pontos percentuais |
 | `3-barras-estados.png` | `bio_charts.py` | barras por estado com os dois turnos e o número de votos |
 | `numeros.json` | `bio_charts.py` | totais do país (`nat`) e por estado (`uf`: votos, votos sem habilitação pela digital, percentuais e diferença) |
 | `textos.json` | `textos.py` | `{chave: {"image", "text"}}`: `resumo_1_mapas` a `resumo_4_metodo` (o resumo em partes, na ordem) e `texto_mapas`, `texto_variacao`, `texto_estados` (um texto completo para cada imagem) |
+| `conferencia_bu_2t.json` | `conferir_bu_2t.py` | contagem dos logs × boletim de urna do 2º turno: BUs lidos, comparados, iguais e a lista das diferenças (em 2026, 4.000 de 4.000 iguais) |
 | `bio_sample_1t.csv` | `bio_sample_1t.py` | opcional: contagem no log do 1º turno das 300 seções sorteadas |
 
 Outras análises leem daqui: `comparecimento_dia/` usa `bio_1t_secoes.csv`, `bio_2t_secoes_v2.csv` e `cobertura.json`;

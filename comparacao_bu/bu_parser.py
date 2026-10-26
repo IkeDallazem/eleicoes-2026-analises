@@ -1,6 +1,6 @@
 """Leitor mínimo do boletim de urna binário do TSE (o03221{uf}{mun}{zona}{secao}-bu.dat, ASN.1 DER), sem dependências.
 
-O imgbu (texto) não está publicado no 2º turno de 2026 (NoSuchKey), então usamos o BU binário, que tem os mesmos números.
+O imgbu (texto) não está publicado no 2º turno de 2026 (NoSuchKey); por isso é lido o BU binário, que tem os mesmos números.
 Estrutura observada (tags implícitas de contexto, conforme bu.asn1 do TSE):
 
   EntidadeEnvelopeGenerico SEQ { cabecalho SEQ{dataGeracao, [2] idEleicao/pleito}, fase ENUM, [0] identificacao, tipoEnvelope ENUM,
