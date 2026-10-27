@@ -64,7 +64,7 @@ def confere(caminho, tipo):
     """Levanta erro se o arquivo baixado não tem a cara esperada."""
     if tipo == "zip":
         with zipfile.ZipFile(caminho) as z:
-            nome = caminho.name.replace(".zip", "_BRASIL.csv")
+            nome = caminho.name.removesuffix(".part").replace(".zip", "_BRASIL.csv")
             if nome not in z.namelist():
                 raise ValueError(f"{nome} não está no zip")
             if z.testzip() is not None:
